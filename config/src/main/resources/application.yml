@@ -1,0 +1,31 @@
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
+    metadata-map:
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@localhost:8761/eureka/
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/CQHui/spring-boot-cloud
+          search-paths: config-repo
+  rabbitmq:
+    host: 101.132.174.159
+    port: 5672
+    username: admin
+    password: admin
+
+security:
+  user:
+    name: user
+    password: ${CONFIG_SERVER_PASSWORD:password}
