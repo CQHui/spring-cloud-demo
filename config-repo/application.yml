@@ -18,7 +18,7 @@ ribbon:
   ReadTimeout: 5000
   ConnectTimeout: 5000
 
-  spring:
+spring:
   rabbitmq:
     host: 101.132.174.159
     port: 5672
