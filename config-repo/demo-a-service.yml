@@ -3,6 +3,16 @@ server:
 
 name: zhangxd
 
-
+security:
+  user:
+    name: user
+    password: password
+  oauth2:
+    client:
+      clientId: demo-a-service
+      clientSecret: ${security.user.password}
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
+      grant-type: client_credentials
+      scope: server
 
 
