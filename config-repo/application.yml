@@ -31,3 +31,8 @@ spring:
       enabled: false
     scheduled:
       skip-pattern: "^org.*HystrixStreamTask$"
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/current
