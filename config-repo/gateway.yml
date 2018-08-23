@@ -20,10 +20,10 @@ ribbon:
 zuul:
   ignoredServices: '*'
   routes:
-#    auth-service:
-#      path: /uaa/**
-#      stripPrefix: false
-#      sensitiveHeaders:
+    auth-service:
+      path: /uaa/**
+      stripPrefix: false
+      sensitiveHeaders:
     demo-a-service:
       path: /demoa/**
       sensitiveHeaders:
