@@ -1,0 +1,58 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://101.132.174.159:3306/demo?characterEncoding=utf8&useSSL=false
+    username: root
+    password: aliyun-qihui
+    filters: stat,wall
+    druid:
+      initial-size: 10
+      min-idle: 10
+      max-active: 30
+      test-on-borrow: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      web-stat-filter:
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      stat-view-servlet:
+        allow:
+        login-username: admin
+        login-password: admin
+
+  redis:
+    #数据库索引
+    database: 1
+    host: 101.132.174.159
+    port: 6379
+    password: qihuiredis
+    lettuce:
+      pool:
+        #最大连接数
+        max-active: 8
+        #最大阻塞等待时间(负数表示没限制)
+        max-wait: -1
+        #最大空闲
+        max-idle: 8
+        #最小空闲
+        min-idle: 0
+    #连接超时时间
+    timeout: 10000
+
+
+mybatis:
+  type-aliases-package: com.qihui.cachedemo.model
+  mapper-locations: classpath:mapper/*.xml
+
+mapper:
+  mappers:
+  - com.qihui.cachedemo.mapper.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+logging:
+  level:
+    #打印SQL信息
+    com.qihui.cachedemo: debug

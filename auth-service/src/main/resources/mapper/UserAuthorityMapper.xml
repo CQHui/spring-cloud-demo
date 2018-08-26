@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qihui.auth.dao.UserAuthorityMapper">
+    <select id="getAllAuthority" resultType="com.qihui.auth.model.AuthoritiesDO">
+        select tb3.*
+        from sys_user_role tb1
+        left join sys_role_permission tb2
+        on tb2.role_id = tb2.role_id
+        left join sys_permission tb3
+        on tb2.permission_id = tb3.id
+        where tb1.user_id = #{userId}
+    </select>
+
+</mapper>

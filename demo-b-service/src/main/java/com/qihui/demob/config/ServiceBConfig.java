@@ -1,4 +1,4 @@
-package com.qihui.demoa.config;
+package com.qihui.demob.config;
 
 import feign.RequestInterceptor;
 import org.springframework.cloud.security.oauth2.client.feign.OAuth2FeignRequestInterceptor;
@@ -13,13 +13,12 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 
 /**
  * @author chenqihui
- * @date 2018/8/13
+ * @date 2018/8/24
  */
 @Configuration
 @EnableResourceServer
 @EnableGlobalMethodSecurity(prePostEnabled = true, jsr250Enabled = true)
-public class ServiceAConfig extends ResourceServerConfigurerAdapter {
-
+public class ServiceBConfig extends ResourceServerConfigurerAdapter {
     @Bean
     public RequestInterceptor oauth2FeignRequestInterceptor(OAuth2ClientContext oauth2ClientContext,
                                                             ClientCredentialsResourceDetails resource) {
