@@ -3,6 +3,12 @@ server:
 
 name: chencc
 
+eureka:
+  instance:
+    metadata-map:
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
+
 security:
   user:
     name: user
@@ -14,5 +20,9 @@ security:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
       grant-type: client_credentials
       scope: server
+
+logging:
+  file: demo_a.log
+  path: log/
 
 
