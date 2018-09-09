@@ -21,8 +21,5 @@ security:
       grant-type: client_credentials
       scope: server
 
-logging:
-  file: demo_a.log
-  path: log
 
 
