@@ -17,7 +17,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/CQHui/spring-boot-cloud
+          uri: https://github.com/CQHui/spring-cloud-demo
           search-paths: config-repo
   rabbitmq:
     host: 101.132.174.159

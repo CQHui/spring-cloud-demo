@@ -1,4 +1,4 @@
-package cn.zhangxd.monitor;
+package com.zhangxd.monitor;
 
 import de.codecentric.boot.admin.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
