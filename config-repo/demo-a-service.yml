@@ -23,6 +23,6 @@ security:
 
 logging:
   file: demo_a.log
-  path: log/
+  path: log
 
 
