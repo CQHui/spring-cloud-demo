@@ -1,6 +1,6 @@
 package com.qihui.demoa;
 
-import com.spring4all.swagger.EnableSwagger2Doc;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -8,7 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
-@EnableSwagger2Doc
+//@EnableSwagger2Doc
 @EnableDiscoveryClient
 @EnableFeignClients
 @SpringBootApplication

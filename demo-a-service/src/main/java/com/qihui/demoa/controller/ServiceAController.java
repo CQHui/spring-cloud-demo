@@ -2,6 +2,7 @@ package com.qihui.demoa.controller;
 
 import com.qihui.demoa.client.ServiceBClient;
 import com.spring4all.swagger.EnableSwagger2Doc;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
@@ -29,12 +30,14 @@ public class ServiceAController {
     }
 
     @GetMapping(value = "/")
+    @ApiOperation("测试调用serviceB")
     public String printServiceA() {
         ServiceInstance serviceInstance = discoveryClient.getLocalServiceInstance();
         return serviceInstance.getServiceId() + " (" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + ")" + "===>name:" + name + "<br/>" + serviceBClient.printServiceB();
     }
 
     @GetMapping(path = "/current")
+    @ApiOperation("当前用户")
     public Principal getCurrentAccount(Principal principal) {
         return principal;
     }

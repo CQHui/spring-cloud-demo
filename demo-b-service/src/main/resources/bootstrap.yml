@@ -12,3 +12,6 @@ spring:
         max-interval: 10000
         multiplier: 2
         max-attempts: 10
+
+swagger:
+  base-package: com.qihui.demob.controller

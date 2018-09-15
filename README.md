@@ -18,3 +18,6 @@
 - redis
 - rabbitmq
 - 配置文件管理库（github）
+
+### 统一接口文档地址
+swagger： http://127.0.0.1:8060/swagger-ui.html

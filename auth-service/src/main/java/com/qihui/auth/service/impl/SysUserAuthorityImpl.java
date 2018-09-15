@@ -20,6 +20,7 @@ import java.util.List;
 public class SysUserAuthorityImpl implements SysUserRoleService {
     @Resource
     private UserAuthorityMapper userAuthorityMapper;
+
     @Override
     public Collection<? extends GrantedAuthority> getAllAuthorities(Long userId) {
         List<AuthoritiesDO> allAuthority = userAuthorityMapper.getAllAuthority(userId);

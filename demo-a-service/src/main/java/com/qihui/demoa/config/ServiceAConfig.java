@@ -1,9 +1,11 @@
 package com.qihui.demoa.config;
 
+import com.qihui.common.config.SwaggerConfig;
 import feign.RequestInterceptor;
 import org.springframework.cloud.security.oauth2.client.feign.OAuth2FeignRequestInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
@@ -18,6 +20,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 @Configuration
 @EnableResourceServer
 @EnableGlobalMethodSecurity(prePostEnabled = true, jsr250Enabled = true)
+@Import(SwaggerConfig.class)
 public class ServiceAConfig extends ResourceServerConfigurerAdapter {
 
     @Bean
