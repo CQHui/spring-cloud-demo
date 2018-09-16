@@ -19,5 +19,15 @@
 - rabbitmq
 - 配置文件管理库（github）
 
-### 统一接口文档地址
-swagger： http://127.0.0.1:8060/swagger-ui.html
+### 其他说明：
+
+#### 启动顺序
+1. registry 注册中心
+2. config 配置中心
+3. gateway 网关中心  auth-service 授权中心
+4. 其他资源服务随意启动
+
+#### swagger： 
+配置在网关的文档中心，需要授权访问
+url：http://127.0.0.1:8060/swagger-ui.html
+
