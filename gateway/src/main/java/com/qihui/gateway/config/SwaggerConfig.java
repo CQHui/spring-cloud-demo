@@ -1,4 +1,4 @@
-package com.qihui.gateway;
+package com.qihui.gateway.config;
 
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.context.annotation.Primary;

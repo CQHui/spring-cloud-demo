@@ -2,6 +2,8 @@ package com.qihui.common.config;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnResource;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.context.annotation.Bean;
@@ -35,26 +37,16 @@ public class SwaggerConfig {
 
     private String clientSecret = "secret";
 
-
-
     @Autowired
-    LoadBalancerClient loadBalancerClient;
+    private LoadBalancerClient loadBalancerClient;
+
 
     @Bean
     public Docket api() {
-        List<ResponseMessage> list = new java.util.ArrayList<>();
-        list.add(new ResponseMessageBuilder().code(500).message("500 message")
-                .responseModel(new ModelRef("Result")).build());
-        list.add(new ResponseMessageBuilder().code(401).message("Unauthorized")
-                .responseModel(new ModelRef("Result")).build());
-        list.add(new ResponseMessageBuilder().code(406).message("Not Acceptable")
-                .responseModel(new ModelRef("Result")).build());
-
         return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any()).build().securitySchemes(Collections.singletonList(securitySchema()))
                 .securityContexts(Collections.singletonList(securityContext())).pathMapping("/")
-                .useDefaultResponseMessages(false).apiInfo(apiInfo()).globalResponseMessage(RequestMethod.GET, list)
-                .globalResponseMessage(RequestMethod.POST, list);
+                .useDefaultResponseMessages(false).apiInfo(apiInfo());
 
     }
 
