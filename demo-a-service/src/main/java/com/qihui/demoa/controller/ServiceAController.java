@@ -1,5 +1,6 @@
 package com.qihui.demoa.controller;
 
+import com.qihui.common.exception.BusinessException;
 import com.qihui.demoa.client.ServiceBClient;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import io.swagger.annotations.ApiOperation;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
+
+import static com.qihui.common.enums.ErrorCodeEnum.GL99999999;
 
 @RefreshScope
 @RestController
@@ -41,4 +44,11 @@ public class ServiceAController {
     public Principal getCurrentAccount(Principal principal) {
         return principal;
     }
+
+    @GetMapping(path = "/error")
+    @ApiOperation("报错测试")
+    public void errorTest() {
+        throw new BusinessException(GL99999999);
+    }
+
 }

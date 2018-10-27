@@ -3,12 +3,15 @@ package com.qihui.gateway.interceptor;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
+import com.qihui.common.exception.BusinessException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+
+import static com.qihui.common.enums.ErrorCodeEnum.UAC10010001;
 
 /**
  * The class Auth header filter.
@@ -71,7 +74,7 @@ public class AuthHeaderFilter extends ZuulFilter {
             doSomething(requestContext);
         } catch (Exception e) {
             log.error("AuthHeaderFilter - [FAIL] EXCEPTION={}", e.getMessage(), e);
-            throw new RuntimeException("鉴权失败");
+            throw new BusinessException(UAC10010001);
         }
         return null;
     }
