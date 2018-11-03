@@ -59,9 +59,11 @@ public class SwaggerConfig {
         authorizationScopeList.add(new AuthorizationScope("write", "access all"));
 
         List<GrantType> grantTypes = newArrayList();
-        GrantType creGrant = new ResourceOwnerPasswordCredentialsGrant("http://"+ gateway.getHost() + ":" + gateway.getPort() +"/uaa/oauth/token");
 
-        grantTypes.add(creGrant);
+        if (gateway != null) {
+            GrantType creGrant = new ResourceOwnerPasswordCredentialsGrant("http://"+ gateway.getHost() + ":" + gateway.getPort() +"/uaa/oauth/token");
+            grantTypes.add(creGrant);
+        }
 
         return new OAuth("oauth2schema", authorizationScopeList, grantTypes);
 

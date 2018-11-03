@@ -45,10 +45,16 @@ public class ServiceAController {
         return principal;
     }
 
-    @GetMapping(path = "/error")
+    @GetMapping(path = "/errorTest")
     @ApiOperation("报错测试")
     public void errorTest() {
         throw new BusinessException(GL99999999);
+    }
+
+    @GetMapping("/name")
+    @ApiOperation("测试config刷新")
+    public String name() {
+        return name;
     }
 
 }

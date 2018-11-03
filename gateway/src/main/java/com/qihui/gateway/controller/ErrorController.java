@@ -55,7 +55,7 @@ public class ErrorController extends BasicErrorController {
             message = businessException.getMessage();
         }
 
-        Map<String, Object> map = new HashMap<String, Object>();
+        Map<String, Object> map = new HashMap<>();
         map.put("code", code);
         map.put("message", message);
         return new ResponseEntity<>(map, status);
