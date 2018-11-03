@@ -1,7 +1,7 @@
 server:
   port: 8080
 
-name: chencc
+name: chenqh
 
 eureka:
   instance:
