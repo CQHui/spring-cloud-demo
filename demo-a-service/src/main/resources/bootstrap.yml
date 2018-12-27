@@ -19,3 +19,9 @@ feign:
 
 swagger:
   base-package: com.qihui.demoa.controller
+
+logging:
+  file: logs/demo_a/demo_a.log
+  pattern:
+    file: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+  level: debug

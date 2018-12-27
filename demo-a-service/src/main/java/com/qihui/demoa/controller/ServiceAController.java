@@ -2,7 +2,7 @@ package com.qihui.demoa.controller;
 
 import com.qihui.common.exception.BusinessException;
 import com.qihui.demoa.client.ServiceBClient;
-import com.spring4all.swagger.EnableSwagger2Doc;
+
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -32,7 +32,7 @@ public class ServiceAConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/druid/**", "/swagger-ui.html", "/swagger-resources/**", "/v2/api-docs", "/name", "/refresh").permitAll()
+                .antMatchers("/druid/**", "/swagger-ui.html", "/swagger-resources/**", "/v2/api-docs", "/name", "/refresh", "/limit/current").permitAll()
                 .anyRequest().authenticated();
     }
 }
