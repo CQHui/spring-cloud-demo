@@ -3,7 +3,6 @@ package com.qihui.demoa;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
-import java.security.Principal;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;

@@ -75,6 +75,16 @@
             <groupId>org.jolokia</groupId>
             <artifactId>jolokia-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.qihui</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.qihui</groupId>
+            <artifactId>demo-a-service-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>

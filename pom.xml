@@ -27,6 +27,7 @@
         <module>demo-b-service</module>
         <module>zipkin</module>
 		<module>common</module>
+        <module>service-api</module>
     </modules>
 
     <properties>

@@ -81,6 +81,12 @@
             <artifactId>common</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.qihui</groupId>
+            <artifactId>demo-a-service-api</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
