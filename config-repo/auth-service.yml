@@ -36,3 +36,7 @@ spring:
         login-password: admin
   jpa:
     show-sql: true
+  redis:
+    host: 101.132.174.159
+    port: 6379
+    password: qihuiredis
