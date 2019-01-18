@@ -41,3 +41,4 @@ security:
   oauth2:
     resource:
       user-info-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/current
+      access-token-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
