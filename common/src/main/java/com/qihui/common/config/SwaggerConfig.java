@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -35,17 +36,15 @@ public class SwaggerConfig {
     @Autowired
     private LoadBalancerClient loadBalancerClient;
 
-
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-                .paths(PathSelectors.any()).build().securitySchemes(Collections.singletonList(securitySchema()))
+                .paths(PathSelectors.any()).build().securitySchemes(Collections.singletonList(securityScheme()))
                 .securityContexts(Collections.singletonList(securityContext())).pathMapping("/")
                 .useDefaultResponseMessages(false).apiInfo(apiInfo());
-
     }
 
-    private OAuth securitySchema() {
+    private OAuth securityScheme() {
         ServiceInstance gateway = loadBalancerClient.choose("gateway");
 
         List<AuthorizationScope> authorizationScopeList = newArrayList();
@@ -60,7 +59,7 @@ public class SwaggerConfig {
             grantTypes.add(creGrant);
         }
 
-        return new OAuth("oauth2schema", authorizationScopeList, grantTypes);
+        return new OAuth("oauth2scheme", authorizationScopeList, grantTypes);
 
     }
 
