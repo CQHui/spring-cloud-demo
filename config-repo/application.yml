@@ -38,7 +38,7 @@ authserver:
   contextPath: /uaa
 
 gatewayserver:
-  port: 8080
+  port: 8060
 
 security:
   oauth2:
