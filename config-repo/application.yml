@@ -37,8 +37,11 @@ authserver:
   port: 5000
   contextPath: /uaa
 
+gatewayserver:
+  port: 8080
+
 security:
   oauth2:
     resource:
       user-info-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/current
-      access-token-uri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
+      access-token-uri: http://${authserver.hostname}:${gatewayserver.port}${authserver.contextPath}/oauth/token
